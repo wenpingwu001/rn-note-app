@@ -13,6 +13,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          headerShown: false,
           tabBarIcon: ({ focused }) => {
             return route.name === "Note" ? (
               <MaterialIcons
