@@ -2,9 +2,9 @@ import React from "react";
 import { StyleSheet, Pressable, SafeAreaView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-const FloatButton = () => {
+const FloatButton = ({ onPress }: any) => {
   return (
-    <Pressable style={styles.button}>
+    <Pressable onPress={onPress} style={styles.button}>
       <Ionicons name="add" size={24} color="white" />
     </Pressable>
   );
