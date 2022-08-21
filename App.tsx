@@ -1,17 +1,21 @@
 import { StyleSheet } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 
 import NoteScreen from "./screens/NoteScreen";
 import TodoScreen from "./screens/TodoScreen";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const Tab = createBottomTabNavigator();
+// TODO: safearea view tabbar on ios
+const Tab = createMaterialTopTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+        tabBarPosition="bottom"
         screenOptions={({ route }) => ({
           headerShown: false,
           tabBarIcon: ({ focused }) => {
