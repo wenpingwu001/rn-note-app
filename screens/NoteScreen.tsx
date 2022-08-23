@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
 import FloatButton from "../components/FloatButton";
 import CreateNoteModal from "../components/CreateNoteModal";
 import NoteItem from "../components/NoteItem";
@@ -15,7 +16,12 @@ const NoteScreen = () => {
       style={{ flex: 1, backgroundColor: "#eee", paddingHorizontal: 20 }}
     >
       <Header />
-      <NoteItem />
+      <View>
+        <NoteItem />
+        <NoteItem />
+        <NoteItem />
+        <NoteItem />
+      </View>
       <FloatButton onPress={handlePress} />
       <CreateNoteModal
         isVisible={isCreateNoteModalOpen}

@@ -16,8 +16,7 @@ const NoteItem = () => {
         <Text style={styles.time}>2021/06/22</Text>
         <Pressable></Pressable>
       </View>
-      <Text></Text>
-      <Text></Text>
+      <Text style={styles.title}>hello world</Text>
       {/* time  */}
       {/* check */}
       {/* title */}
@@ -35,8 +34,15 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 15,
     padding: 15,
+    marginBottom: 10,
   },
   time: {
     fontSize: 10,
+    marginBottom: 10,
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 15,
+    marginBottom: 5,
   },
 });
