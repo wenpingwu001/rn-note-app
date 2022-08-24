@@ -2,11 +2,13 @@ import { View, TextInput, Text, Modal, SafeAreaView } from "react-native";
 import React, { useEffect, useState } from "react";
 import { AntDesign, Entypo } from "@expo/vector-icons";
 import dayjs from "dayjs";
+import { useAppDispatch } from "../app/hooks";
 
 const CreateNoteModal = ({ isVisible, onClosePress }: any) => {
   const [time, setTime] = useState<string>();
   const [text, setText] = useState<string>("");
 
+  const dispatch = useAppDispatch();
   useEffect(() => {
     const t = dayjs().format("MM/DD HH:mm");
     setTime(t.toString());
