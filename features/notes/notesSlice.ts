@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type Note = {
+export interface Note {
   id: string;
   time: string;
   title?: string;
   content?: string;
-};
+}
 
 const initialValue: Note[] = [];
 export const notesSlice = createSlice({
@@ -31,3 +31,4 @@ export const notesSlice = createSlice({
 });
 
 export default notesSlice.reducer;
+export const { createNote } = notesSlice.actions;

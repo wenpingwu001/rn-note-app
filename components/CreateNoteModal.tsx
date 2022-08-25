@@ -3,18 +3,37 @@ import React, { useEffect, useState } from "react";
 import { AntDesign, Entypo } from "@expo/vector-icons";
 import dayjs from "dayjs";
 import { useAppDispatch } from "../app/hooks";
+import { createNote, Note } from "../features/notes/notesSlice";
 
 const CreateNoteModal = ({ isVisible, onClosePress }: any) => {
-  const [time, setTime] = useState<string>();
+  const [time, setTime] = useState<string>("");
   const [text, setText] = useState<string>("");
 
-  const dispatch = useAppDispatch();
   useEffect(() => {
+    updateTime();
+  }, []);
+  const dispatch = useAppDispatch();
+  const updateTime = () => {
     const t = dayjs().format("MM/DD HH:mm");
     setTime(t.toString());
-  }, []);
+  };
+  const handleDismiss = () => {
+    if (!text) return;
+    const note: Note = {
+      id: Date.now().toString(),
+      time,
+      content: text,
+    };
+    dispatch(createNote(note));
+    setText("");
+  };
   return (
-    <Modal animationType="slide" visible={isVisible}>
+    <Modal
+      animationType="slide"
+      visible={isVisible}
+      onDismiss={handleDismiss}
+      onShow={updateTime}
+    >
       <SafeAreaView style={{ margin: 20 }}>
         <View
           style={{

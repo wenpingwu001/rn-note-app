@@ -9,19 +9,15 @@ interface Item {
   title?: string;
   content?: string;
 }
-const NoteItem = () => {
+const NoteItem = (props: Item) => {
+  const { id, time, title, content } = props;
   return (
     <Pressable style={styles.container}>
       <View>
-        <Text style={styles.time}>2021/06/22</Text>
+        <Text style={styles.time}>{time}</Text>
         <Pressable></Pressable>
       </View>
-      <Text style={styles.title}>hello world</Text>
-      {/* time  */}
-      {/* check */}
-      {/* title */}
-      {/* content */}
-      <Text>NoteItem</Text>
+      <Text style={styles.title}>{content}</Text>
     </Pressable>
   );
 };
@@ -41,7 +37,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   title: {
-    fontWeight: "bold",
+    // fontWeight: "bold",
     fontSize: 15,
     marginBottom: 5,
   },
