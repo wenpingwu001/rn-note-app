@@ -17,7 +17,9 @@ const NoteItem = (props: Item) => {
         <Text style={styles.time}>{time}</Text>
         <Pressable></Pressable>
       </View>
-      <Text style={styles.title}>{content}</Text>
+      <Text style={styles.title} numberOfLines={7} ellipsizeMode="tail">
+        {content}
+      </Text>
     </Pressable>
   );
 };
@@ -33,11 +35,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   time: {
+    color: "#aaa",
     fontSize: 10,
     marginBottom: 10,
   },
   title: {
-    // fontWeight: "bold",
     fontSize: 15,
     marginBottom: 5,
   },

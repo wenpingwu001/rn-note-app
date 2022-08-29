@@ -82,6 +82,7 @@ const CreateNoteModal = ({ isVisible, onClosePress }: any) => {
           value={text}
           onChangeText={(text) => setText(text)}
           keyboardAppearance="default"
+          multiline
           autoFocus
         />
       </SafeAreaView>
